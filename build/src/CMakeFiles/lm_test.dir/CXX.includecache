@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hzyu/git/VIMP/vimp/3rdparty/AprilTag/src/contrib/lm.h
+
+/home/hzyu/git/VIMP/vimp/3rdparty/AprilTag/src/contrib/lm_test.cpp
+stdio.h
+-
+lm.h
+/home/hzyu/git/VIMP/vimp/3rdparty/AprilTag/src/contrib/lm.h
+math.h
+-
+assert.h
+-
+stdlib.h
+-
+

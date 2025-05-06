@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+import os, sys
+this_dir = os.path.dirname(os.path.abspath(__file__))
+
+if this_dir not in sys.path:            
+    sys.path.insert(0, this_dir)
+
 from argparse import ArgumentParser
 import os
 import cv2
