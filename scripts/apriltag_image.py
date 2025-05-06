@@ -17,6 +17,7 @@ def apriltag_image(input_images=['../media/input/single_tag.jpg', '../media/inpu
                    output_images=False,
                    display_images=True,
                    detection_window_name='AprilTag',
+                   camera_params=(3156.71852, 3129.52243, 359.097908, 239.736909)
                   ):
 
     '''
@@ -48,7 +49,7 @@ def apriltag_image(input_images=['../media/input/single_tag.jpg', '../media/inpu
 
         result, overlay = apriltag.detect_tags(img,
                                                detector,
-                                               camera_params=(3156.71852, 3129.52243, 359.097908, 239.736909),
+                                               camera_params=camera_params,
                                                tag_size=0.0762,
                                                vizualization=3,
                                                verbose=3,
@@ -64,6 +65,35 @@ def apriltag_image(input_images=['../media/input/single_tag.jpg', '../media/inpu
             cv2.imshow(detection_window_name, overlay)
             while cv2.waitKey(5) < 0:   # Press any key to load subsequent image
                 pass
+
+
+def apriltag_image_numpy(input_img_numpy,
+                        display_images=True,
+                        detection_window_name='AprilTag',
+                        camera_params=(3156.71852, 3129.52243, 359.097908, 239.736909)):
+    parser = ArgumentParser(description='Detect AprilTags from static images.')
+    apriltag.add_arguments(parser)
+    options = parser.parse_args()
+    
+    detector = apriltag.Detector(options, searchpath=apriltag._get_dll_path())
+    
+    print("Detecting image...\n")
+
+    result, overlay = apriltag.detect_tags(input_img_numpy,
+                                            detector,
+                                            camera_params=camera_params,
+                                            tag_size=0.0762,
+                                            vizualization=3,
+                                            verbose=3,
+                                            annotation=True
+                                            )
+
+    if display_images:
+        cv2.imshow(detection_window_name, overlay)
+        while cv2.waitKey(5) < 0:   # Press any key to load subsequent image
+            pass
+
+
 
 ################################################################################
 
