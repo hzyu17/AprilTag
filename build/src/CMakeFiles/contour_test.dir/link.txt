@@ -1,1 +1,0 @@
-/usr/bin/cc  -Wall -Wsign-compare -g -march=native -lpthread -std=gnu99  -rdynamic CMakeFiles/contour_test.dir/contrib/contour_test.c.o  -o ../bin/contour_test  -Wl,-rpath,/home/hzyu/git/VIMP/vimp/3rdparty/AprilTag/build/lib ../lib/libapriltag.so -lpthread -lm 

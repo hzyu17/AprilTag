@@ -1,1 +1,0 @@
-/usr/bin/cc  -Wall -Wsign-compare -g -march=native -lpthread -std=gnu99  -rdynamic CMakeFiles/maketags.dir/contrib/maketags.c.o  -o ../bin/maketags  -Wl,-rpath,/home/hzyu/git/VIMP/vimp/3rdparty/AprilTag/build/lib: ../lib/libapriltag.so -lpthread -lm 
