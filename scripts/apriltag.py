@@ -166,7 +166,7 @@ class DetectorOptions(object):
     '''
 
     def __init__(self,
-                 families='tag36h11',
+                 families='tag25h9',
                  border=1,
                  nthreads=4,
                  quad_decimate=1.0,
@@ -656,9 +656,9 @@ def detect_tags(image,
 
         if verbose==3:
             print(detection.tostring(collections.OrderedDict([('Pose',pose),
-                                                          ('InitError', e0),
-                                                          ('FinalError', e1)]),
-                                                          indent=2))
+                                                                ('InitError', e0),
+                                                                ('FinalError', e1)]),
+                                                                indent=2))
 
             print()
 

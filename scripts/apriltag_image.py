@@ -67,7 +67,7 @@ def apriltag_image(input_images=['../media/input/single_tag.jpg', '../media/inpu
                 pass
 
 
-def apriltag_image_numpy(input_img_numpy,
+def apriltag_image2pose(input_img_numpy,
                         display_images=True,
                         detection_window_name='AprilTag',
                         camera_params=(3156.71852, 3129.52243, 359.097908, 239.736909)):
@@ -92,6 +92,12 @@ def apriltag_image_numpy(input_img_numpy,
         cv2.imshow(detection_window_name, overlay)
         while cv2.waitKey(5) < 0:   # Press any key to load subsequent image
             pass
+    
+    pose = None
+    if len(result) > 0: 
+        pose = result[1]
+        
+    return pose
 
 
 
