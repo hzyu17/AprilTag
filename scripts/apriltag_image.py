@@ -50,7 +50,7 @@ def apriltag_image(input_images=['../media/input/single_tag.jpg', '../media/inpu
         result, overlay = apriltag.detect_tags(img,
                                                detector,
                                                camera_params=camera_params,
-                                               tag_size=0.0762,
+                                               tag_size=0.1,
                                                vizualization=3,
                                                verbose=3,
                                                annotation=True
@@ -82,7 +82,7 @@ def apriltag_image2pose(input_img_numpy,
     result, overlay = apriltag.detect_tags(input_img_numpy,
                                             detector,
                                             camera_params=camera_params,
-                                            tag_size=0.0762,
+                                            tag_size=0.1,
                                             vizualization=3,
                                             verbose=3,
                                             annotation=True
